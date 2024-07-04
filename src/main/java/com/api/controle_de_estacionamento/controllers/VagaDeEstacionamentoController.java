@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -38,4 +41,27 @@ public class VagaDeEstacionamentoController {
         vagaDeEstacionamentoModel.setDataRegistro(LocalDateTime.now(ZoneId.of("UTC")));
         return ResponseEntity.status(HttpStatus.CREATED).body(vagaDeEstacionamentoService.salvar(vagaDeEstacionamentoModel));
     }
+
+    @GetMapping
+    public ResponseEntity<List<VagaDeEstacionamentoModel>> listarTodasAsVagas(){
+        return ResponseEntity.status(HttpStatus.OK).body(vagaDeEstacionamentoService.findAll());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Object> buscarVagaPorId(@PathVariable(value = "id") UUID id){
+        Optional<VagaDeEstacionamentoModel> vagaDeEstacionamentoOptional = vagaDeEstacionamentoService.findById(id);
+        if (!vagaDeEstacionamentoOptional.isPresent()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Vaga não localizada");
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(vagaDeEstacionamentoOptional.get());
+    }
+
+
+
+
+
+
+
+
+
 }

@@ -11,7 +11,7 @@ public interface VagaDeEstacionamentoRepository extends JpaRepository<VagaDeEsta
 
     boolean existsByPlacaDoCarro(String placaDoCarro);
     boolean existsByNumVagaEstacionamento(String numVagaEstacionamento);
-
     boolean existsByApartamentoAndBloco(String apartamento, String bloco);
+
 
 }
