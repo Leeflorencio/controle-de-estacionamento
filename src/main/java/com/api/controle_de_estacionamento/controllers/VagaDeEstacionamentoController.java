@@ -67,6 +67,28 @@ public class VagaDeEstacionamentoController {
     }
 
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Object> atualizarVaga(@PathVariable(value = "id") UUID id,
+                                                @RequestBody @Valid VagaDeEstacionamentoDto vagaDeEstacionamentoDto){
+        Optional<VagaDeEstacionamentoModel> vagaDeEstacionamentoOptional = vagaDeEstacionamentoService.findById(id);
+        if (!vagaDeEstacionamentoOptional.isPresent()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Vaga não localizada");
+        }
+        var vagaDeEstacionamentoModel = vagaDeEstacionamentoOptional.get();
+
+        vagaDeEstacionamentoModel.setNumVagaEstacionamento(vagaDeEstacionamentoDto.getNumVagaEstacionamento());
+        vagaDeEstacionamentoModel.setPlacaDoCarro(vagaDeEstacionamentoDto.getPlacaDoCarro());
+        vagaDeEstacionamentoModel.setMarcaDoCarro(vagaDeEstacionamentoDto.getMarcaDoCarro());
+        vagaDeEstacionamentoModel.setModeloDoCarro(vagaDeEstacionamentoDto.getModeloDoCarro());
+        vagaDeEstacionamentoModel.setCorDoCarro(vagaDeEstacionamentoDto.getCorDoCarro());
+        vagaDeEstacionamentoModel.setNomeDoResponsavel(vagaDeEstacionamentoDto.getNomeDoResponsavel());
+        vagaDeEstacionamentoModel.setApartamento(vagaDeEstacionamentoDto.getApartamento());
+        vagaDeEstacionamentoModel.setBloco(vagaDeEstacionamentoDto.getBloco());
+
+        vagaDeEstacionamentoModel.setDataRegistro(vagaDeEstacionamentoOptional.get().getDataRegistro());
+
+        return ResponseEntity.status(HttpStatus.OK).body(vagaDeEstacionamentoService.salvar(vagaDeEstacionamentoModel));
+    }
 
 
 
