@@ -3,6 +3,7 @@ package com.api.controle_de_estacionamento.services;
 import com.api.controle_de_estacionamento.models.VagaDeEstacionamentoModel;
 import com.api.controle_de_estacionamento.repositories.VagaDeEstacionamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -40,5 +41,10 @@ public class VagaDeEstacionamentoService {
 
     public Optional<VagaDeEstacionamentoModel> findById(UUID id) {
         return vagaDeEstacionamentoRepository.findById(id);
+    }
+
+    @Transactional
+    public void deletar(VagaDeEstacionamentoModel vagaDeEstacionamentoModel) {
+        vagaDeEstacionamentoRepository.delete(vagaDeEstacionamentoModel);
     }
 }
