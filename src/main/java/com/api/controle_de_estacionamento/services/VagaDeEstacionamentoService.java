@@ -3,7 +3,8 @@ package com.api.controle_de_estacionamento.services;
 import com.api.controle_de_estacionamento.models.VagaDeEstacionamentoModel;
 import com.api.controle_de_estacionamento.repositories.VagaDeEstacionamentoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -35,8 +36,8 @@ public class VagaDeEstacionamentoService {
         return vagaDeEstacionamentoRepository.existsByApartamentoAndBloco(apartamento, bloco);
     }
 
-    public List<VagaDeEstacionamentoModel> findAll() {
-        return vagaDeEstacionamentoRepository.findAll();
+    public Page<VagaDeEstacionamentoModel> findAll(Pageable pageable) {
+        return vagaDeEstacionamentoRepository.findAll(pageable);
     }
 
     public Optional<VagaDeEstacionamentoModel> findById(UUID id) {
