@@ -1,16 +1,15 @@
 # Controle de estacionamento
 
-<hr>
-
 <p> Sistema de gerenciamento de vagas de um estacionamento, permitindo o controle de disponibilidade, 
 reserva e informações dos veículos.</p>
-
-<hr>
 
 ### Features
 
 ```http
  Cadastro - POST /vaga-estacionamento/
+```
+```http
+ Listar todas as vagas - GET /vaga-estacionamento/page=2&size=1
 ```
 
 
