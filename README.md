@@ -9,5 +9,10 @@ reserva e informações dos veículos.</p>
 
 ### Features
 
+```http
+ Cadastro - POST /vaga-estacionamento/
+```
+
+
 ### 🛠 Tecnologias
 Java 17 - Postgres - Spring Data JPA - Hibernate - Spring Boot - Postman
