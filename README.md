@@ -6,10 +6,10 @@ reserva e informações dos veículos.</p>
 ### Features
 
 ```http
- Cadastro - POST /vaga-estacionamento/
+ Cadastro | POST /vaga-estacionamento/
 ```
 ```http
- Listar todas as vagas - GET /vaga-estacionamento/page=2&size=1
+ Listar todas as vagas | GET /vaga-estacionamento/page=2&size=1
 ```
 
 
