@@ -2,9 +2,12 @@
 
 <hr>
 
-<p> Sistema de gerenciamento de vagas de um estacionamento </p>
+<p> Sistema de gerenciamento de vagas de um estacionamento, permitindo o controle de disponibilidade, 
+reserva e informações dos veículos.</p>
 
 <hr>
+
+### Features
 
 ### 🛠 Tecnologias
 Java 17 - Postgres - Spring Data JPA - Hibernate - Spring Boot - Postman
