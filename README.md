@@ -5,12 +5,20 @@ reserva e informações dos veículos.</p>
 
 ### Features
 
-```http
- Cadastro | POST /vaga-estacionamento/
-```
-```http
- Listar todas as vagas | GET /vaga-estacionamento/page=2&size=1
-```
+<p>Endpoint para adicionar, atualizar, listar e remover vagas de estacionamento.
+
+Informações das vagas incluem identificação da vaga, informações sobre o carro (modelo, placa, cor, marca). E informações sobre o responsável, como nome, apartamento e bloco. 
+</p>
+
+`Cadastrar | POST /vaga-estacionamento/`
+
+`Listar vagas| GET /vaga-estacionamento/page=2&size=1`
+
+`Listar por ID | GET /vaga-estacionamento/{id}`
+
+`Deletar | DELETE /vaga-estacionamento/{id}`
+
+`Atualizar | PUT /vaga-estacionamento/{id}`
 
 
 ### 🛠 Tecnologias
