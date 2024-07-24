@@ -3,9 +3,6 @@
 <p> Sistema de gerenciamento de vagas de um estacionamento, permitindo o controle de disponibilidade, 
 reserva e informações dos veículos.</p>
 
-<p> Sistema de gerenciamento de vagas de um estacionamento, permitindo o controle de disponibilidade, 
-reserva e informações dos veículos.</p>
-
 ### Features
 
 <p>Endpoint para adicionar, atualizar, listar e remover vagas de estacionamento.
@@ -26,6 +23,10 @@ Informações das vagas incluem identificação da vaga, informações sobre o c
 
 ### Features
 - Cadastro de vagas
+- Listar todas as vagas
+- Listar por ID
+- Deletar vaga
+- Atualizar
 
 ### 🛠 Tecnologias
 Java 17 - Postgres - Spring Data JPA - Hibernate - Spring Boot - Postman

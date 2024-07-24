@@ -6,6 +6,7 @@ import com.api.controle_de_estacionamento.services.VagaDeEstacionamentoService;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -26,6 +27,12 @@ public class VagaDeEstacionamentoController {
 
     @Autowired
     VagaDeEstacionamentoService vagaDeEstacionamentoService;
+
+    @Value("${app.name}")
+    private String appName;
+
+    @Value("${app.port}")
+    private String appPort;
 
     @GetMapping("/teste")
     public ResponseEntity<String> teste() {
@@ -51,7 +58,10 @@ public class VagaDeEstacionamentoController {
 
     @GetMapping("listar-todos")
     public ResponseEntity<Page<VagaDeEstacionamentoModel>> listarTodasAsVagas(@PageableDefault( page = 0, sort = "id", size = 10,
-                                                                               direction = Sort.Direction.ASC) Pageable pageable){
+                                                                  direction = Sort.Direction.ASC) Pageable pageable){
+        //testando variaveis com @Value
+        System.out.println("App name: " + appName);
+        System.out.println("App port " + appPort);
         return ResponseEntity.status(HttpStatus.OK).body(vagaDeEstacionamentoService.findAll(pageable));
     }
 
