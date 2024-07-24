@@ -27,6 +27,10 @@ public class VagaDeEstacionamentoController {
     @Autowired
     VagaDeEstacionamentoService vagaDeEstacionamentoService;
 
+    @GetMapping("/teste")
+    public ResponseEntity<String> teste() {
+        return ResponseEntity.ok("Serviço funcionando");
+    }
     @PostMapping
     public ResponseEntity<Object> salvarVaga(@RequestBody @Valid VagaDeEstacionamentoDto vagaDeEstacionamentoDto){
         var vagaDeEstacionamentoModel = new VagaDeEstacionamentoModel();
@@ -45,7 +49,7 @@ public class VagaDeEstacionamentoController {
         return ResponseEntity.status(HttpStatus.CREATED).body(vagaDeEstacionamentoService.salvar(vagaDeEstacionamentoModel));
     }
 
-    @GetMapping
+    @GetMapping("listar-todos")
     public ResponseEntity<Page<VagaDeEstacionamentoModel>> listarTodasAsVagas(@PageableDefault( page = 0, sort = "id", size = 10,
                                                                                direction = Sort.Direction.ASC) Pageable pageable){
         return ResponseEntity.status(HttpStatus.OK).body(vagaDeEstacionamentoService.findAll(pageable));
