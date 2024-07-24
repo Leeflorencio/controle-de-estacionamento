@@ -3,10 +3,9 @@
 <p> Sistema de gerenciamento de vagas de um estacionamento, permitindo o controle de disponibilidade, 
 reserva e informações dos veículos.</p>
 
-<<<<<<< HEAD
 <p> Sistema de gerenciamento de vagas de um estacionamento, permitindo o controle de disponibilidade, 
 reserva e informações dos veículos.</p>
-=======
+
 ### Features
 
 <p>Endpoint para adicionar, atualizar, listar e remover vagas de estacionamento.
@@ -23,7 +22,6 @@ Informações das vagas incluem identificação da vaga, informações sobre o c
 `Deletar | DELETE /vaga-estacionamento/{id}`
 
 `Atualizar | PUT /vaga-estacionamento/{id}`
->>>>>>> 8ad50101c0d759f5f56eb19befc9c2b56b09f586
 
 
 ### Features
